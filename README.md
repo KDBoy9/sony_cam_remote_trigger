@@ -32,7 +32,7 @@ Timed controls accept whole seconds from 1 to 65,535. The page shows the latest 
 
 ## Hardware setup
 
-![Placeholder for a photo of the assembled camera remote](docs/assets/setup-placeholder.png)
+![Actual photo of complete link from remote iPhone to Camera](docs/assets/setup-photo.jpeg)
 
 <!-- Add your photo at docs/assets/setup-photo.jpg and change the image link and alt text above. -->
 
