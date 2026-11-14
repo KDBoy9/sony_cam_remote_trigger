@@ -53,17 +53,6 @@ Wire each LoRa module the same way. Provide 3.3 V and a common ground.
 
 Both builds default to 433.5 MHz, BW 125 kHz, SF7, CR 4/5, and +7 dBm conducted transmit power. Keep both copies of `lora_config.h` in sync and use settings appropriate to your location and hardware.
 
-## Flash and run
-
-1. Enter BOOTSEL on each board and copy its matching UF2 to the mounted drive. Use both builds from this repository so the LoRa frame versions match.
-   - [Pico W UF2](remote_pico_w/firmware/remote_pico_w.uf2)
-   - [Pico 2 UF2](camera_pico2/firmware/camera_pico2.uf2)
-2. Connect the camera to the Pico 2's PIO USB host adapter and select **Remote Shoot (PC Remote)** on the camera.
-3. Join **KD_PICO_W** on the phone, open [http://192.168.4.1/](http://192.168.4.1/), and wait for **Camera ready**.
-4. Fire a single shot and confirm that the image is saved. Then test interval start/stop and a delayed shot. For bulb testing, select Still → M → **BULB**, use the mechanical shutter, turn Silent Mode and the built-in BULB Timer off, and try a short exposure. Return to a normal shutter speed for the other controls. [Sony bulb shooting](https://helpguide.sony.net/ilc/2360/v1/en/contents/0302C_bulb.html) · [Sony BULB Timer](https://helpguide.sony.net/ilc/2360/v1/en/contents/211h_bulb_timer.html)
-
-The Wi-Fi AP is open by default. Set `AP_PASSWORD` in [app_config.h](remote_pico_w/app_config.h) and rebuild to use WPA2. The web API and LoRa frames have no separate authentication. When testing a bulb exposure, keep the camera's USB link connected so the release command can reach it.
-
 ## Build from source
 
 Use CMake, an Arm GNU toolchain, and Pico SDK 2.3.1 with its submodules. The camera build also needs Pico-PIO-USB. The bundled camera UF2 was built with Pico-PIO-USB commit `b186e36`.
